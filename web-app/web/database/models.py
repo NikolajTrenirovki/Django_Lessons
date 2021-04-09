@@ -7,8 +7,14 @@ class Articles(models.Model):
     full_text = models.TextField('Статья')
     date = models.DateTimeField('Дата публикации')
 
+
     def _str_(self):
         return f'Новость: {self.title}'
+
+
+    def get_absolute_url(self):
+        return '/news/'
+
 
     class Meta:
         verbose_name = 'Новость'
